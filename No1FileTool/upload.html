@@ -1,0 +1,23 @@
+<html>
+<body>
+
+
+<p>注意， 提交文件的大小不可超过2000kb， 且文件名称不可包含中文</p>
+
+选择需要上传的A文件<form action="upload_file_A.php" method="post" enctype="multipart/form-data">
+<input type="file" name="file" id="file" /> 
+<input type="submit" name="preForA" value="提交A 表格" />
+</form>
+
+选择需要上传的B文件<form action="upload_file_B.php" method="post" enctype="multipart/form-data">
+<input type="file" name="file" id="file" />
+<input type="submit" name="preForB" value="提交B 表格" />
+</form>
+
+
+！！！！注意，请在上传完A，B文件之后，点击此按钮！！！！<form action="MixAB.php" method="post" enctype="multipart/form-data">
+<input type="submit" name="MixAB" value="AB表对照" />
+</form>
+
+</body>
+</html>
