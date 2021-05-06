@@ -44,6 +44,14 @@ while index_col<=Allcol:
 
 wb.save(save_dir+Filename)
 #标注一次到件和二次到件
+
+format_pattern = '%Y-%m-%d %H:%M:%S'
+cur_time = datetime.now()
+# 将 'cur_time' 类型时间通过格式化模式转换为 'str' 时间
+cur_time = cur_time.strftime(format_pattern)
+#print(cur_time)
+cur_date = cur_time[0:10]+" 06:00:00"
+
 wb1 = load_workbook(save_dir+Filename)
 ws1 = wb1[wb1.sheetnames[0]]
 
@@ -58,18 +66,14 @@ while index_row<=allrows:
 		continue
 	else:
 		date_time = str(date_time)
-		date1 = date_time[0:10]
-		time1 = date_time[11:]
+		
+#		date1 = date_time[0:10]
+#		time1 = date_time[11:]
 #		print(date1)
 #		print(time1)
 		index_row+=1
 
 wb1.save(save_dir+Filename)
-format_pattern = '%Y-%m-%d %H:%M:%S'
-cur_time = datetime.now()
-# 将 'cur_time' 类型时间通过格式化模式转换为 'str' 时间
-cur_time = cur_time.strftime(format_pattern)
-print(cur_time)
 
 #print('文件保存在'+save_dir+find_new_file(dir))
 time_end=time.time()
