@@ -22,9 +22,8 @@ path =  "/var/www/html/QualityCtrl/No1FileTool"
 dir = path+'/uploadB/' #用来读取文件 的 路径
 save_dir = path+'/resultB/' #用来保存文件 的 路径
 
-
-wb = load_workbook(dir+find_new_file(dir))
-
+Filename = find_new_file(dir)
+wb = load_workbook(dir+Filename)
 ws = wb[wb.sheetnames[0]]
 
 Allrow = ws.max_row
@@ -43,7 +42,28 @@ while index_col<=Allcol:
 #print(type(ws.cell(2,2).value))
 #print(ws.cell(2,2).value)
 
-wb.save(save_dir+find_new_file(dir))
+wb.save(save_dir+Filename)
+#标注一次到件和二次到件
+wb1 = load_workbook(save_dir+Filename)
+ws1 = wb1[wb1.sheetnames[0]]
+
+allrows = ws1.max_row
+allclos = ws1.max_column
+
+index_row = 2
+while index_row<=allrows:
+	date_time = ws1.cell(index_row,2).value
+	if date_time == None:
+		index_row+=1
+		continue
+	else:
+		date_time = str(date_time)
+		date1 = date_time[0:10]
+		time1 = date_time[11:]
+		index_row+=1
+
+wb1.save(save_dir+Filename)
+
 #print('文件保存在'+save_dir+find_new_file(dir))
 time_end=time.time()
 print(time_end-time_start)
