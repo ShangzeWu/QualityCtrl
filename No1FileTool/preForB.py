@@ -51,7 +51,7 @@ cur_time = datetime.now()
 cur_time = cur_time.strftime(format_pattern)
 
 cur_date = cur_time[0:10]+" 06:00:00"
-print(cur_date)
+#print(cur_date)
 
 wb1 = load_workbook(save_dir+Filename)
 ws1 = wb1[wb1.sheetnames[0]]
@@ -67,7 +67,11 @@ while index_row<=allrows:
 		continue
 	else:
 		date_time = str(date_time)
-		
+		difference = (datetime.strptime(date_time , format_pattern) - datetime.strptime(cur_date, format_pattern))
+		if difference.days < 0:
+			print(date_time, '一次')
+		else:
+			print(date_time, '二次')
 #		date1 = date_time[0:10]
 #		time1 = date_time[11:]
 #		print(date1)
