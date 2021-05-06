@@ -60,6 +60,8 @@ while index_row<=allrows:
 		date_time = str(date_time)
 		date1 = date_time[0:10]
 		time1 = date_time[11:]
+		print(date1)
+		print(time1)
 		index_row+=1
 
 wb1.save(save_dir+Filename)
