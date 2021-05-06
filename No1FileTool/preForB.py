@@ -49,8 +49,9 @@ format_pattern = '%Y-%m-%d %H:%M:%S'
 cur_time = datetime.now()
 # 将 'cur_time' 类型时间通过格式化模式转换为 'str' 时间
 cur_time = cur_time.strftime(format_pattern)
-#print(cur_time)
+
 cur_date = cur_time[0:10]+" 06:00:00"
+print(cur_date)
 
 wb1 = load_workbook(save_dir+Filename)
 ws1 = wb1[wb1.sheetnames[0]]
