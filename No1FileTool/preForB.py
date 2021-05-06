@@ -65,7 +65,7 @@ while index_row<=allrows:
 		index_row+=1
 
 wb1.save(save_dir+Filename)
-
+format_pattern = '%Y-%m-%d %H:%M:%S'
 cur_time = datetime.now()
 # 将 'cur_time' 类型时间通过格式化模式转换为 'str' 时间
 cur_time = cur_time.strftime(format_pattern)
