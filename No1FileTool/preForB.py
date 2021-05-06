@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 from openpyxl import *
 #from openpyxl.styles.numbers import FORMAT_TEXT
-
+from datetime import datetime
 import os
 import time
 
@@ -60,11 +60,16 @@ while index_row<=allrows:
 		date_time = str(date_time)
 		date1 = date_time[0:10]
 		time1 = date_time[11:]
-		print(date1)
-		print(time1)
+#		print(date1)
+#		print(time1)
 		index_row+=1
 
 wb1.save(save_dir+Filename)
+
+cur_time = datetime.now()
+# 将 'cur_time' 类型时间通过格式化模式转换为 'str' 时间
+cur_time = cur_time.strftime(format_pattern)
+print(cur_time)
 
 #print('文件保存在'+save_dir+find_new_file(dir))
 time_end=time.time()
