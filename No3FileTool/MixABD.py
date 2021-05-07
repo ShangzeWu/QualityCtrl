@@ -41,8 +41,15 @@ def  match_add(ws3,ws1,ws2):
                         value_1 = int(value_1)
                         if value_1 == value_3:
                             found = True
-                            ws1.cell(row = index_A_row,column = 8, value = value_3_1)
-                            ws1.cell(row = index_A_row,column = 9, value = value_3_2)
+                            ws1.cell(row = index_A_row,column = 8, value = value_3_1)  #在A表中写入地址
+                            if value_3_2 == None:             #如果三段码为空，直接写入
+                                ws1.cell(row = index_A_row,column = 9, value = value_3_2)
+                            else:                               #如果三段码不为空，转换str，判断长度
+                                value_3_2 = str(value_3_2)
+                                if len(value_3_2<9):            #三段码不全 直接写入
+                                    ws1.cell(row = index_A_row,column = 9, value = value_3_2)
+                                else:                           #三段码完整 截取最后三位 写入
+                                    ws1.cell(row = index_A_row,column = 9, value = value_3_2[-3:])
                             break
                         else:
                             index_A_row+=1
