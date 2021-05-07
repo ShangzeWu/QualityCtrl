@@ -41,7 +41,8 @@ header("Location: http://47.114.178.105/QualityCtrl/No1FileTool/preForA.php");
 }
 else
 {
-    echo "文件过大或非法的文件格式,仅能上传xlsx或xls，请尽量上传xlsx"."<br>";
+    echo "上传失败，错误信息：";
+    echo "文件过大或非法的文件格式,！！注意！！仅能上传xlsx，不支持xls文件"."<br>";
     echo "如需上传更大的文件，请联系管理员";
 }
 
