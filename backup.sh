@@ -13,3 +13,5 @@ find /var/www/html/QualityCtrl/No2FileTool/uploadC/*  -name "*.xlsx*" -exec mv {
 find /var/www/html/QualityCtrl/No2FileTool/resultC/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/backupResultC \;
 
 find /var/www/html/QualityCtrl/No3FileTool/MixABD/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/MixABD \;
+
+find /var/www/html/QualityCtrl/No3FileTool/uploadD/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/uploadD \;
