@@ -53,20 +53,28 @@ for rows in ws.iter_rows(min_row=1, max_row=1, min_col=1):
 						ws.insert_rows(count_row)
 					if c_cell.value=="江苏盐城东沟镇分部":
 						ws.cell(row=count_row,column=count_col+3,value=709)
+						ws.cell(row=count_row,column=10,value='乡镇-东沟8709胡长根')
 					if c_cell.value=="江苏盐城益林镇分部":
 						ws.cell(row=count_row,column=count_col+3,value=710)
+						ws.cell(row=count_row,column=10,value='乡镇-益林2710殷红程')
 					if c_cell.value=="江苏盐城大纵湖营业部":
 						ws.cell(row=count_row,column=count_col+3,value=708)
+						ws.cell(row=count_row,column=10,value='盐都义丰6708陈建国')
 					if c_cell.value=="江苏盐城龙冈营业部":
 						ws.cell(row=count_row,column=count_col+3,value=523)
+						ws.cell(row=count_row,column=10,value='LG区523王智军')
 					if c_cell.value=="江苏盐城潘黄营业部":
 						ws.cell(row=count_row,column=count_col+3,value=512)
+						ws.cell(row=count_row,column=10,value='LG区6512舒婷')
 					if c_cell.value=="江苏盐城黄尖营业部":
 						ws.cell(row=count_row,column=count_col+3,value=707)
+						ws.cell(row=count_row,column=10,value='亭湖黄尖0001蔡呈祥')
 					if c_cell.value=="江苏盐城北蒋营业部" or c_cell.value=="江苏盐城秦南营业部":
 						ws.cell(row=count_row,column=count_col+3,value=704)
+						ws.cell(row=count_row,column=10,value='盐都郭猛7704刘佳')
 					if c_cell.value=="江苏盐城盐东营业部":
 						ws.cell(row=count_row,column=count_col+3,value=707)
+						ws.cell(row=count_row,column=10,value='亭湖黄尖0001蔡呈祥')
 		#根据“签收网点”字段，删除不需要的行
 		if cell.value=="签收网点":
 			count_col = cell.column#记录当前的列数
