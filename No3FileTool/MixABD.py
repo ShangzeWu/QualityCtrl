@@ -46,7 +46,7 @@ def  match_add(ws3,ws1,ws2):
                                 ws1.cell(row = index_A_row,column = 9, value = value_3_2)
                             else:                               #如果三段码不为空，转换str，判断长度
                                 value_3_2 = str(value_3_2)
-                                if len(value_3_2<9):            #三段码不全 直接写入
+                                if len(value_3_2)<9:            #三段码不全 直接写入
                                     ws1.cell(row = index_A_row,column = 9, value = value_3_2)
                                 else:                           #三段码完整 判断前两段是否属于盐城
                                     if value_3_2[0:3] != '466' or value_3_2[0:3]!='467': #第一段不属于盐城，直接写入
@@ -78,7 +78,7 @@ def  match_add(ws3,ws1,ws2):
                                     ws2.cell(row = index_B_row,column = 4,value = value_3_2)
                                 else:
                                     value_3_2 = str(value_3_2)
-                                    if len(value_3_2<9):
+                                    if len(value_3_2)<9:
                                         ws2.cell(row = index_B_row,column = 4,value = value_3_2)
                                     else:
                                         if value_3_2[0:3] != '466' or value_3_2[0:3]!='467':
