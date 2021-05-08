@@ -49,10 +49,10 @@ def  match_add(ws3,ws1,ws2):
                                 if len(value_3_2)<9:            #三段码不全 直接写入
                                     ws1.cell(row = index_A_row,column = 9, value = value_3_2)
                                 else:                           #三段码完整 判断前两段是否属于盐城
-                                    if value_3_2[0:3] != '466' or value_3_2[0:3]!='467': #第一段不属于盐城，直接写入
+                                    if value_3_2[0:3] != '466' and value_3_2[0:3]!='467': #第一段不属于盐城，直接写入
                                         ws1.cell(row = index_A_row,column = 9, value = value_3_2)
                                     else:
-                                        if value_3_2[4:7]!='001' or value_3_2[4:7]!='AA1': #第二段不属于盐城，直接写入
+                                        if value_3_2[4:7]!='001' and value_3_2[4:7]!='AA1': #第二段不属于盐城，直接写入
                                             ws1.cell(row = index_A_row,column = 9, value = value_3_2)
                                         else:                         #完全属于盐城，直接截取最后一段写入
                                             ws1.cell(row = index_A_row,column = 9, value = value_3_2[-3:])
@@ -81,10 +81,10 @@ def  match_add(ws3,ws1,ws2):
                                     if len(value_3_2)<9:
                                         ws2.cell(row = index_B_row,column = 4,value = value_3_2)
                                     else:
-                                        if value_3_2[0:3] != '466' or value_3_2[0:3]!='467':
+                                        if value_3_2[0:3] != '466' and value_3_2[0:3]!='467':
                                             ws2.cell(row = index_B_row,column = 4,value = value_3_2)
                                         else:
-                                            if value_3_2[4:7]!='001' or value_3_2[4:7]!='AA1':
+                                            if value_3_2[4:7]!='001' and value_3_2[4:7]!='AA1':
                                                 ws2.cell(row = index_B_row,column = 4,value = value_3_2)
                                             else:
                                                 ws2.cell(row = index_B_row,column = 4,value = value_3_2[-3:])
