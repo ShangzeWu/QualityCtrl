@@ -58,7 +58,7 @@ def  match_add(ws3,ws1,ws2,ws4):
                                         else:                         #完全属于盐城，直接截取最后一段写入
                                             ws1.cell(row = index_A_row,column = 9, value = value_3_2[-3:])
                                             index_3 = 3
-                                            while index_3 <= allrow4:
+                                            while index_3 <= allrow4:    #查找对应的展示名称 并写入
                                                 value4 = ws4.cell(index_3,1).value
                                                 value4 = str(value4)
                                                 if value4 == value_3_2[-3:]:
