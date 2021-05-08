@@ -83,6 +83,7 @@ def  match_add(ws3,ws1,ws2,ws4):
                             ws2.cell(row = index_B_row,column = 3,value = value_3_1)    #在B表中写入地址
                             if ws3.cell(index_D_row,11).value == '江苏盐城公司' or ws3.cell(index_D_row,11).value == '江苏省市场部五十七部':
                                 ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+                                ws2.cell(row = index_B_row,column = 7,value = '退回件')
                             else:
                                 if value_3_2 == None:
                                     ws2.cell(row = index_B_row,column = 4,value = value_3_2)
