@@ -71,7 +71,23 @@ def  match_add(ws3,ws1,ws2):
                         if value_2 == value_3:
                             found = True
                             ws2.cell(row = index_B_row,column = 3,value = value_3_1)    #在B表中写入地址
-                            ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+                            if ws3.cell(index_D_row,11).value == '江苏盐城公司' or ws3.cell(index_D_row,11).value == '江苏省市场部五十七部':
+                                ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+                            else:
+                                if value_3_2 == None:
+                                    ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+                                else:
+                                    value_3_2 = str(value_3_2)
+                                    if len(value_3_2<9):
+                                        ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+                                    else:
+                                        if value_3_2[0:3] != '466' or value_3_2[0:3]!='467':
+                                            ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+                                        else:
+                                            if value_3_2[4:7]!='001' or value_3_2[4:7]!='AA1':
+                                                ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+                                            else:
+                                                ws2.cell(row = index_B_row,column = 4,value = value_3_2[-3:])
                             break
                         else:
                             index_B_row+=1
