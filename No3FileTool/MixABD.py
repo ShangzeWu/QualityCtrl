@@ -12,13 +12,14 @@ def find_new_file(dir):
 #    print('完整路径：', file)
     return file_lists[-1]   #返回文件的名字，不包含路径
 
-def  match_add(ws3,ws1,ws2):
+def  match_add(ws3,ws1,ws2,ws4):
     allcol3 = ws3.max_column
     allrow3 = ws3.max_row
     allcol1 = ws1.max_column
     allrow1 = ws1.max_row
     allcol2 = ws2.max_column
     allrow2 = ws2.max_row
+    allrow4 = ws4.max_row
     index_D_row = 2
     while index_D_row <= allrow3:  #循环D表的所有行
         found = False
@@ -56,6 +57,15 @@ def  match_add(ws3,ws1,ws2):
                                             ws1.cell(row = index_A_row,column = 9, value = value_3_2)
                                         else:                         #完全属于盐城，直接截取最后一段写入
                                             ws1.cell(row = index_A_row,column = 9, value = value_3_2[-3:])
+                                            index_3 = 3
+                                            while index_3 <= allrow4:
+                                                value4 = ws4.cell(index_3,1).value
+                                                value4 = str(value4)
+                                                if value4 == value_3_2[-3:]:
+                                                    ws1.cell(row = index_A_row , column = 10 , value = ws4.cell(index_3,2).value)
+                                                    break
+                                                else:
+                                                    index_3+=1
                             break
                         else:
                             index_A_row+=1
@@ -88,6 +98,15 @@ def  match_add(ws3,ws1,ws2):
                                                 ws2.cell(row = index_B_row,column = 4,value = value_3_2)
                                             else:
                                                 ws2.cell(row = index_B_row,column = 4,value = value_3_2[-3:])
+                                                index_3=3
+                                                while index_3 <= allrow4:
+                                                    value4 = ws4.cell(index_3,1).value
+                                                    value4 = str(value4)
+                                                    if value4 == value_3_2[-3:]:
+                                                        ws2.cell(row = index_B_row,column = 5,value = ws4.cell(index_3,2).value)
+                                                        break
+                                                    else:
+                                                        index3+=1
                             break
                         else:
                             index_B_row+=1
@@ -97,11 +116,13 @@ def  match_add(ws3,ws1,ws2):
 readA_path = "/var/www/html/QualityCtrl/No1FileTool/MixAB_A/"
 readB_path = "/var/www/html/QualityCtrl/No1FileTool/MixAB_B/"
 readD_path = "/var/www/html/QualityCtrl/No3FileTool/uploadD/"
+read3_path = "/var/www/html/QualityCtrl/No3FileTool/3codelist/"
 save_path = "/var/www/html/QualityCtrl/No3FileTool/MixABD/" #用来保存文件 的 路径
 
 file_name_A = find_new_file(readA_path)
 file_name_B = find_new_file(readB_path)
 file_name_D = find_new_file(readD_path)
+file_name_3 = find_new_file(read3_path)
 
 
 #业务逻辑
@@ -111,9 +132,12 @@ wb2 = load_workbook(readB_path+file_name_B)
 ws2 = wb2[wb2.sheetnames[0]]
 wb3 = load_workbook(readD_path+file_name_D)
 ws3 = wb3[wb3.sheetnames[0]]
+wb4 = load_workbook(read3_path+file_name_3)
+ws4 = wb4[wb4.sheetnames[0]]
 
-match_add(ws3,ws1,ws2)
+match_add(ws3,ws1,ws2,ws4)
 
 wb1.save(save_path+file_name_A)
 wb2.save(save_path+file_name_B)
 wb3.save(readD_path+file_name_D)
+wb4.save(read3_path+file_name_3)
