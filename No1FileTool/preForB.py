@@ -69,10 +69,10 @@ while index_row<=allrows:
 		date_time = str(date_time)
 		difference = (datetime.strptime(date_time , format_pattern) - datetime.strptime(cur_date, format_pattern))
 		if difference.days < 0:
-			ws1.cell(row=index_row,column=5,value = '一次')
+			ws1.cell(row=index_row,column=6,value = '一次')
 			#print(date_time, '一次')
 		else:
-			ws1.cell(row=index_row,column=5,value = '二次')
+			ws1.cell(row=index_row,column=6,value = '二次')
 			#print(date_time, '二次')
 #		date1 = date_time[0:10]
 #		time1 = date_time[11:]
