@@ -2,11 +2,14 @@
 from openpyxl import *
 import os
 import time
+from datetime import datetime, timedelta
 
 format_pattern = '%Y-%m-%d %H:%M:%S'
 cur_time = datetime.now()
+#当前时间减少2天
+timeline = cur_time + timedelta(days=-2)
 # 将 'cur_time' 类型时间通过格式化模式转换为 'str' 时间
-cur_time = cur_time.strftime(format_pattern)
+timeline = timeline.strftime(format_pattern)
 
 def find_new_file(dir):
     '''查找目录下最新的文件'''
@@ -39,6 +42,7 @@ def  match_add(ws3,ws1,ws2,ws4):
             value_3_1 = ws3.cell(index_D_row,30).value    #读取地址
             value_3_2 = ws3.cell(index_D_row,40).value    #读取三段码
             value_3_3 = ws3.cell(index_D_row,8).value     #业务标签
+            value_3_4 = ws3.cell(index_D_row,4).value
             if value_3_3 != None:
                 value_3_3 = str(value_3_3)
                 value_3_3 = value_3_3[0:2]
