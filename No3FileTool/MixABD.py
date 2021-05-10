@@ -65,7 +65,7 @@ def  match_add(ws3,ws1,ws2,ws4):
                             ws1.cell(row = index_A_row,column = 8, value = value_3_1)  #在A表中写入地址
                             if ws3.cell(index_D_row,11).value == '江苏盐城公司' or ws3.cell(index_D_row,11).value == '江苏省市场部五十七部':
                                 difference = (datetime.strptime(value_3_4, format_pattern) - datetime.strptime(timeline, format_pattern))
-		                        if difference.days < 0:
+		                if difference.days < 0:
                                     ws1.cell(row = index_A_row,column = 9,value = value_3_2)
                                     ws1.cell(row = index_A_row,column = 11,value = '退回件')
                                 else:
