@@ -35,6 +35,8 @@ def  match_add(ws3,ws1,ws2,ws4):
             if value_3_3 != None:
                 value_3_3 = str(value_3_3)
                 value_3_3 = value_3_3[0:2]
+            else:
+                value_3_3 = 'not'
             if found == False:     #在A表中查找
                 index_A_row = 2
                 while index_A_row <= allrow1:
