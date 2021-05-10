@@ -31,6 +31,10 @@ def  match_add(ws3,ws1,ws2,ws4):
             value_3 = int(value_3)   #单号有效
             value_3_1 = ws3.cell(index_D_row,30).value    #读取地址
             value_3_2 = ws3.cell(index_D_row,40).value    #读取三段码
+            value_3_3 = ws3.cell(index_D_row,8).value     #业务标签
+            if value_3_3 != None:
+                value_3_3 = str(value_3_3)
+                value_3_3 = value_3_3[0:2]
             if found == False:     #在A表中查找
                 index_A_row = 2
                 while index_A_row <= allrow1:
@@ -42,6 +46,8 @@ def  match_add(ws3,ws1,ws2,ws4):
                         value_1 = int(value_1)
                         if value_1 == value_3:
                             found = True
+                            if value_3_3 == '生鲜件':
+                                ws1.cell(row = index_A_row,column = 12, value = value_3_3)      #标注‘生鲜件’
                             ws1.cell(row = index_A_row,column = 8, value = value_3_1)  #在A表中写入地址
                             if ws3.cell(index_D_row,11).value == '江苏盐城公司' or ws3.cell(index_D_row,11).value == '江苏省市场部五十七部':
                                 ws1.cell(row = index_A_row,column = 9,value = value_3_2)
@@ -84,6 +90,8 @@ def  match_add(ws3,ws1,ws2,ws4):
                         value_2 = int(value_2)
                         if value_2 == value_3:
                             found = True
+                            if value_3_3 == '生鲜件':
+                                ws2.cell(row = index_B_row,column = 8,value = value_3_3)    #标注‘生鲜件’
                             ws2.cell(row = index_B_row,column = 3,value = value_3_1)    #在B表中写入地址
                             if ws3.cell(index_D_row,11).value == '江苏盐城公司' or ws3.cell(index_D_row,11).value == '江苏省市场部五十七部':
                                 ws2.cell(row = index_B_row,column = 4,value = value_3_2)
