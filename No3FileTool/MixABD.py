@@ -43,29 +43,33 @@ def  match_add(ws3,ws1,ws2,ws4):
                         if value_1 == value_3:
                             found = True
                             ws1.cell(row = index_A_row,column = 8, value = value_3_1)  #在A表中写入地址
-                            if value_3_2 == None:             #如果三段码为空，直接写入
-                                ws1.cell(row = index_A_row,column = 9, value = value_3_2)
-                            else:                               #如果三段码不为空，转换str，判断长度
-                                value_3_2 = str(value_3_2)
-                                if len(value_3_2)<9:            #三段码不全 直接写入
+                            if ws3.cell(index_D_row,11).value == '江苏盐城公司' or ws3.cell(index_D_row,11).value == '江苏省市场部五十七部':
+                                ws1.cell(row = index_A_row,column = 9,value = value_3_2)
+                                ws1.cell(row = index_A_row,column = 11,value = '退回件')
+                            else:
+                                if value_3_2 == None:             #如果三段码为空，直接写入
                                     ws1.cell(row = index_A_row,column = 9, value = value_3_2)
-                                else:                           #三段码完整 判断前两段是否属于盐城
-                                    if value_3_2[0:3] != '466' and value_3_2[0:3]!='467': #第一段不属于盐城，直接写入
+                                else:                               #如果三段码不为空，转换str，判断长度
+                                    value_3_2 = str(value_3_2)
+                                    if len(value_3_2)<9:            #三段码不全 直接写入
                                         ws1.cell(row = index_A_row,column = 9, value = value_3_2)
-                                    else:
-                                        if value_3_2[4:7]!='001' and value_3_2[4:7]!='AA1': #第二段不属于盐城，直接写入
+                                    else:                           #三段码完整 判断前两段是否属于盐城
+                                        if value_3_2[0:3] != '466' and value_3_2[0:3]!='467': #第一段不属于盐城，直接写入
                                             ws1.cell(row = index_A_row,column = 9, value = value_3_2)
-                                        else:                         #完全属于盐城，直接截取最后一段写入
-                                            ws1.cell(row = index_A_row,column = 9, value = value_3_2[-3:])
-                                            index_3 = 3
-                                            while index_3 <= allrow4:    #查找对应的展示名称 并写入
-                                                value4 = ws4.cell(index_3,1).value
-                                                value4 = str(value4)
-                                                if value4 == value_3_2[-3:]:
-                                                    ws1.cell(row = index_A_row , column = 10 , value = ws4.cell(index_3,2).value)
-                                                    break
-                                                else:
-                                                    index_3+=1
+                                        else:
+                                            if value_3_2[4:7]!='001' and value_3_2[4:7]!='AA1': #第二段不属于盐城，直接写入
+                                                ws1.cell(row = index_A_row,column = 9, value = value_3_2)
+                                            else:                         #完全属于盐城，直接截取最后一段写入
+                                                ws1.cell(row = index_A_row,column = 9, value = value_3_2[-3:])
+                                                index_3 = 3
+                                                while index_3 <= allrow4:    #查找对应的展示名称 并写入
+                                                    value4 = ws4.cell(index_3,1).value
+                                                    value4 = str(value4)
+                                                    if value4 == value_3_2[-3:]:
+                                                        ws1.cell(row = index_A_row , column = 10 , value = ws4.cell(index_3,2).value)
+                                                        break
+                                                    else:
+                                                        index_3+=1
                             break
                         else:
                             index_A_row+=1
