@@ -42,7 +42,8 @@ def  match_add(ws3,ws1,ws2,ws4):
             value_3_1 = ws3.cell(index_D_row,30).value    #读取地址
             value_3_2 = ws3.cell(index_D_row,40).value    #读取三段码
             value_3_3 = ws3.cell(index_D_row,8).value     #业务标签
-            value_3_4 = ws3.cell(index_D_row,4).value
+            value_3_4 = ws3.cell(index_D_row,4).value     #获取时间
+            value_3_4 = str(value_3_4)
             if value_3_3 != None:
                 value_3_3 = str(value_3_3)
                 value_3_3 = value_3_3[0:2]
@@ -63,8 +64,34 @@ def  match_add(ws3,ws1,ws2,ws4):
                                 ws1.cell(row = index_A_row,column = 12, value = value_3_3)      #标注‘生鲜件’
                             ws1.cell(row = index_A_row,column = 8, value = value_3_1)  #在A表中写入地址
                             if ws3.cell(index_D_row,11).value == '江苏盐城公司' or ws3.cell(index_D_row,11).value == '江苏省市场部五十七部':
-                                ws1.cell(row = index_A_row,column = 9,value = value_3_2)
-                                ws1.cell(row = index_A_row,column = 11,value = '退回件')
+                                difference = (datetime.strptime(value_3_4, format_pattern) - datetime.strptime(timeline, format_pattern))
+		                        if difference.days < 0:
+                                    ws1.cell(row = index_A_row,column = 9,value = value_3_2)
+                                    ws1.cell(row = index_A_row,column = 11,value = '退回件')
+                                else:
+                                    if value_3_2 == None:             #如果三段码为空，直接写入
+                                        ws1.cell(row = index_A_row,column = 9, value = value_3_2)
+                                    else:                               #如果三段码不为空，转换str，判断长度
+                                        value_3_2 = str(value_3_2)
+                                        if len(value_3_2)<9:            #三段码不全 直接写入
+                                            ws1.cell(row = index_A_row,column = 9, value = value_3_2)
+                                        else:                           #三段码完整 判断前两段是否属于盐城
+                                            if value_3_2[0:3] != '466' and value_3_2[0:3]!='467': #第一段不属于盐城，直接写入
+                                                ws1.cell(row = index_A_row,column = 9, value = value_3_2)
+                                            else:
+                                                if value_3_2[4:7]!='001' and value_3_2[4:7]!='AA1': #第二段不属于盐城，直接写入
+                                                    ws1.cell(row = index_A_row,column = 9, value = value_3_2)
+                                                else:                         #完全属于盐城，直接截取最后一段写入
+                                                    ws1.cell(row = index_A_row,column = 9, value = value_3_2[-3:])
+                                                    index_3 = 3
+                                                    while index_3 <= allrow4:    #查找对应的展示名称 并写入
+                                                        value4 = ws4.cell(index_3,1).value
+                                                        value4 = str(value4)
+                                                        if value4 == value_3_2[-3:]:
+                                                            ws1.cell(row = index_A_row , column = 10 , value = ws4.cell(index_3,2).value)
+                                                            break
+                                                        else:
+                                                            index_3+=1
                             else:
                                 if value_3_2 == None:             #如果三段码为空，直接写入
                                     ws1.cell(row = index_A_row,column = 9, value = value_3_2)
