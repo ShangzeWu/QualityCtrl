@@ -1,6 +1,12 @@
 # -*- coding: UTF-8 -*-
 from openpyxl import *
 import os
+import time
+
+format_pattern = '%Y-%m-%d %H:%M:%S'
+cur_time = datetime.now()
+# 将 'cur_time' 类型时间通过格式化模式转换为 'str' 时间
+cur_time = cur_time.strftime(format_pattern)
 
 def find_new_file(dir):
     '''查找目录下最新的文件'''
@@ -22,6 +28,7 @@ def  match_add(ws3,ws1,ws2,ws4):
     allrow4 = ws4.max_row
     index_D_row = 2
     while index_D_row <= allrow3:  #循环D表的所有行
+        
         found = False
         value_3 = ws3.cell(index_D_row,2).value #读取单号
         if  value_3 == None:
