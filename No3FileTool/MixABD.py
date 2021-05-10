@@ -131,37 +131,37 @@ def  match_add(ws3,ws1,ws2,ws4):
                         if value_2 == value_3:
                             found = True
                             if value_3_3 == '生鲜件':
-                                ws2.cell(row = index_B_row,column = 8,value = value_3_3)    #标注‘生鲜件’
-                            ws2.cell(row = index_B_row,column = 3,value = value_3_1)    #在B表中写入地址
-                            if ws3.cell(index_D_row,11).value == '江苏盐城公司' or ws3.cell(index_D_row,11).value == '江苏省市场部五十七部':
-                                difference = (datetime.strptime(value_3_4, format_pattern) - datetime.strptime(timeline, format_pattern))
-		            	if difference.days < 0:
-					ws2.cell(row = index_B_row,column = 4,value = value_3_2)
-                                	ws2.cell(row = index_B_row,column = 7,value = '退回件')
-				else:
-					if value_3_2 == None:
-                                    		ws2.cell(row = index_B_row,column = 4,value = value_3_2)
-                                	else:
-                                    		value_3_2 = str(value_3_2)
-                                    		if len(value_3_2)<9:
-                                        		ws2.cell(row = index_B_row,column = 4,value = value_3_2)
-                                    		else:
-                                        		if value_3_2[0:3] != '466' and value_3_2[0:3]!='467':
-                                            			ws2.cell(row = index_B_row,column = 4,value = value_3_2)
-                                        		else:
-                                            			if value_3_2[4:7]!='001' and value_3_2[4:7]!='AA1':
-                                                			ws2.cell(row = index_B_row,column = 4,value = value_3_2)
-                                            			else:
-                                                			ws2.cell(row = index_B_row,column = 4,value = value_3_2[-3:])
-                                                			index_3=3
-                                                			while index_3 <= allrow4:
-                                                    				value4 = ws4.cell(index_3,1).value
-                                                   				value4 = str(value4)
-                                                    				if value4 == value_3_2[-3:]:
-                                                        				ws2.cell(row = index_B_row,column = 5,value = ws4.cell(index_3,2).value)
-                                                        				break
-                                                    				else:
-                                                        				index_3+=1
+								ws2.cell(row = index_B_row,column = 8,value = value_3_3)    #标注‘生鲜件’
+							ws2.cell(row = index_B_row,column = 3,value = value_3_1)    #在B表中写入地址
+							if ws3.cell(index_D_row,11).value == '江苏盐城公司' or ws3.cell(index_D_row,11).value == '江苏省市场部五十七部':
+								difference = (datetime.strptime(value_3_4, format_pattern) - datetime.strptime(timeline, format_pattern))
+								if difference.days < 0:
+									ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+									ws2.cell(row = index_B_row,column = 7,value = '退回件')
+								else:
+									if value_3_2 == None:
+										ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+									else:
+										value_3_2 = str(value_3_2)
+										if len(value_3_2)<9:
+											ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+										else:
+											if value_3_2[0:3] != '466' and value_3_2[0:3]!='467':
+												ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+											else:
+												if value_3_2[4:7]!='001' and value_3_2[4:7]!='AA1':
+													ws2.cell(row = index_B_row,column = 4,value = value_3_2)
+												else:
+													ws2.cell(row = index_B_row,column = 4,value = value_3_2[-3:])
+													index_3=3
+													while index_3 <= allrow4:
+														value4 = ws4.cell(index_3,1).value
+														value4 = str(value4)
+														if value4 == value_3_2[-3:]:
+															ws2.cell(row = index_B_row,column = 5,value = ws4.cell(index_3,2).value)
+															break
+														else:
+															index_3+=1
                             else:
                                 if value_3_2 == None:
                                     ws2.cell(row = index_B_row,column = 4,value = value_3_2)
