@@ -87,6 +87,7 @@ def find_insert(ws,name,valueA_5):  #在工作表中查找是否存在这个人�
 				index+=1
 
 def find_insert_b(ws,name):
+	print(name)
 	ws_rows = ws.max_row
 	index = 6
 	while index<= ws_rows:
