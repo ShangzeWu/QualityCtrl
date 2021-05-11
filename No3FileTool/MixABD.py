@@ -131,8 +131,7 @@ def  match_add(ws3,ws1,ws2,ws4):
                         if value_2 == value_3:
                             found = True
                             if value_3_3 == '生鲜件':
-								ws2.cell(row = index_B_row,column = 8,value = value_3_3)    #标注‘生鲜件’
-							ws2.cell(row = index_B_row,column = 3,value = value_3_1)    #在B表中写入地址
+                                ws2.cell(row = index_B_row,column = 8,value = value_3_3)    #标注‘生鲜件’ws2.cell(row = index_B_row,column = 3,value = value_3_1)    #在B表中写入地址
 							if ws3.cell(index_D_row,11).value == '江苏盐城公司' or ws3.cell(index_D_row,11).value == '江苏省市场部五十七部':
 								difference = (datetime.strptime(value_3_4, format_pattern) - datetime.strptime(timeline, format_pattern))
 								if difference.days < 0:
