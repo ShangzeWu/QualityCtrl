@@ -2,7 +2,7 @@
 
 header("content-type:text/html;charset=utf-8");
 
-exec("python3 /var/www/html/QualityCtrl/No2FileTool/ABtoTemp.py 2>&1",$out,$ret);
+exec("sudo python3 /var/www/html/QualityCtrl/No2FileTool/ABtoTemp.py 2>&1",$out,$ret);
 print_r($out);
 print_r($ret);
 
