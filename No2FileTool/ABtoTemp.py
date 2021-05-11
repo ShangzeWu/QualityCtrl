@@ -85,7 +85,16 @@ def find_insert(ws,name,valueA_5):  #在工作表中查找是否存在这个人�
 					return
 			else:   #寻找下一行
 				index+=1
-
+	if index>ws_rows:  #遍历工作页，没找到对应人员，插入一行并写入数据
+		ws.insert_rows(6,1)
+		ws.cell(row=6,column=1,value=name)
+		ws.cell(row=6,column=6,value=1)
+		if valueA_5 != None:
+			ws.cell(row=6,column=7,value=1)
+		else:
+			ws.cell(row=6,column=8,value=1)
+		return
+	
 def find_insert_b(ws,name):
 	print(name)
 	ws_rows = ws.max_row
@@ -107,6 +116,11 @@ def find_insert_b(ws,name):
 				return
 			else:   #寻找下一行
 				index+=1
+	if index > ws_rows:
+		ws.insert_rows(6,1)
+		ws.cell(row=6,column=1,value=name)
+		ws.cell(row=6,column=9,value=1)
+		return
 
 def add(ws_a,ws):  #单表合计
 	ws_row = ws.max_row
