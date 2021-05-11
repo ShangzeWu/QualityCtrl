@@ -265,6 +265,7 @@ while index_b<=AllrowB:
 		elif index_sheet_b == 3:
 			find_insert_b(ws3_CN,name_b)
 		elif index_sheet_b == 4:
+			print(name_b)
 			find_insert_b(ws3_KF,name_b)
 		elif index_sheet_b == 5:
 			find_insert_b(ws3_WX,name_b)
