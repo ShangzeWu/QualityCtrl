@@ -180,7 +180,7 @@ file_name_ABD = find_new_file(dir_MixABD)
 
 #业务逻辑
 wb1 = load_workbook(dir_MixABD+file_name_ABD) 		#处理后的ABD混合输入表
-ws1_a = wb1['a到件无下文']				#ABD表中的A表
+ws1_a = wb1['a 到件无下文']				#ABD表中的A表
 ws1_b = wb1['b发往无下文']          		#ABD表中的B表
 wb3 = load_workbook(dir_template)      #模板表
 ws3_all = wb3['汇总22.00']      #已经写入过C的汇总表
