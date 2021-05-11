@@ -172,7 +172,7 @@ def add(ws_a,ws):  #单表合计
 
 
 path =  "/var/www/html/QualityCtrl/No2FileTool"
-dir_template = path+'/resultTemp/template.xlsx' #用来读取已经写入过C的汇总表 的 路径
+dir_template = path+'/resultTemp/temp.xlsx' #用来读取已经写入过C的汇总表 的 路径
 dir_MixABD= "/var/www/html/QualityCtrl/No2FileTool/uploadMixABD/"  #输出 C文件 的保存路径
 
 file_name_ABD = find_new_file(dir_MixABD)
