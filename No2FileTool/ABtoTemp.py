@@ -288,7 +288,7 @@ while index_b<=AllrowB:
 			find_insert_b(ws3_ZS,name_b)
 		else:
 			find_insert_b(ws3_other,name_b)
-		index += 1
+		index_b += 1
 
 add(ws3_all,ws3_BL)
 add(ws3_all,ws3_XD)
