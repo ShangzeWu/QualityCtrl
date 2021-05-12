@@ -96,7 +96,7 @@ def find_insert(ws,name,valueA_5):  #在工作表中查找是否存在这个人�
 		return
 	
 def find_insert_b(ws,name):
-	print(name)
+	#print(name)
 	ws_rows = ws.max_row
 	index = 6
 	while index<= ws_rows:
@@ -280,7 +280,7 @@ while index_b<=AllrowB:
 		elif index_sheet_b == 3:
 			find_insert_b(ws3_CN,name_b)
 		elif index_sheet_b == 4:
-			print(name_b)
+#			print(name_b)
 			find_insert_b(ws3_KF,name_b)
 		elif index_sheet_b == 5:
 			find_insert_b(ws3_WX,name_b)
