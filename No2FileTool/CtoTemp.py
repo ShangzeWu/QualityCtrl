@@ -104,7 +104,7 @@ def add(ws_a,ws):  #单表合计
 
 
 path =  "/var/www/html/QualityCtrl/No2FileTool"
-dir_template = path+'/template/template.xlsx' #用来读取输出模版表格 的 路径
+dir_template = path+'/template/temp.xlsx' #用来读取输出模版表格 的 路径
 dir_save_C= "/var/www/html/QualityCtrl/No2FileTool/resultC/"  #输出 C文件 的保存路径
 
 file_name_C = find_new_file(dir_save_C)
