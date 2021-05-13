@@ -1,6 +1,13 @@
 # -*- coding: UTF-8 -*-
 from openpyxl import *
 import os
+import time
+from datetime import datetime, timedelta
+
+format_pattern = '%Y-%m-%d %H:%M:%S'
+cur_time = datetime.now()
+# 将 'cur_time' 类型时间通过格式化模式转换为 'str' 时间
+cur_time = cur_time.strftime(format_pattern)
 
 def find_new_file(dir):
     '''查找目录下最新的文件'''
@@ -187,17 +194,18 @@ def add(ws_a,ws):  #单表合计
 
 
 path =  "/var/www/html/QualityCtrl/No2FileTool"
-dir_template = path+'/resultTemp/temp.xlsx' #用来读取已经写入过C的汇总表 的 路径
-dir_MixABD= "/var/www/html/QualityCtrl/No2FileTool/uploadMixABD/"  #输出 C文件 的保存路径
+dir_template = path+'/resultTemp/' #用来读取已经写入过C的汇总表 的 路径
+dir_MixABD= path+"/uploadMixABD/"  # ABD 文件的路径
 
 file_name_ABD = find_new_file(dir_MixABD)
+file_name_temp = find_new_file(dir_template)
 
 
 #业务逻辑
 wb1 = load_workbook(dir_MixABD+file_name_ABD) 		#处理后的ABD混合输入表
 ws1_a = wb1['a 到件无下文']				#ABD表中的A表
 ws1_b = wb1['b发往无下文']          		#ABD表中的B表
-wb3 = load_workbook(dir_template)      #模板表
+wb3 = load_workbook(dir_template+file_name_temp)      #模板表
 ws3_all = wb3['汇总22.00']      #已经写入过C的汇总表
 ws3_BL  = wb3['宝龙区']
 ws3_XD  = wb3['新都区']
@@ -342,4 +350,4 @@ ws3_all.cell(row=19,column=9,value=counterC)
 ws3_all.cell(row=19,column=10,value=counterD)
 
 wb1.save(dir_MixABD+file_name_ABD)
-wb3.save(path+'/resultFinal/Final.xlsx')
+wb3.save(path+'/resultFinal/'+cur_time+'Final.xlsx')
