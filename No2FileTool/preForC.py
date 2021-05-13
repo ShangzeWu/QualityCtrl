@@ -15,17 +15,18 @@ def find_new_file(dir):
 path =  "/var/www/html/QualityCtrl/No2FileTool"
 #print(path)
 dir_C = path+'/uploadC/' #用来读取C文件 的 路径
-dir_namelist = path+'/namelist/namelist.xlsx' #用来读取人员名单表 的 路径
+dir_namelist = path+'/namelist/' #用来读取人员名单表 的 路径
 #dir_template = path+'/template/template.xlsx' #用来读取输出模版表格 的 路径
 dir_save_C= "/var/www/html/QualityCtrl/No2FileTool/"  #输出 C文件 的保存路径
 
 file_name_C = find_new_file(dir_C)
+file_name_list = find_new_file(dir_namelist)
 
 
 #业务逻辑
 wb1 = load_workbook(dir_C+file_name_C) #C表
 ws1 = wb1[wb1.sheetnames[0]]           #C表第一页
-wb2 = load_workbook(dir_namelist)      #namelist表
+wb2 = load_workbook(dir_namelist+file_name_list)      #namelist表
 ws2 = wb2[wb2.sheetnames[0]]           #namelist表第一页
 #wb3 = load_workbook(dir_template)      #模板表
 
@@ -98,7 +99,7 @@ while index_C_col<=Allcol1:
                     index_C_row+=1
         index_C_col=index_C_col+1
 wb1.save(dir_save_C+"resultC/"+file_name_C)
-wb2.save(dir_namelist)
+wb2.save(dir_namelist+file_name_list)
 '''#去除空行
 wb3 = load_workbook(dir_save_C+"resultC/"+file_name_C)
 ws3 = wb3[wb3.sheetnames[0]]
