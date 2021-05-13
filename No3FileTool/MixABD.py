@@ -10,6 +10,7 @@ cur_time = datetime.now()
 timeline = cur_time + timedelta(days=-2)
 # 将 'cur_time' 类型时间通过格式化模式转换为 'str' 时间
 timeline = timeline.strftime(format_pattern)
+cur_time = cur_time.strftime(format_pattern)
 
 def find_new_file(dir):
     '''查找目录下最新的文件'''
@@ -217,7 +218,7 @@ ws4 = wb4[wb4.sheetnames[0]]
 
 match_add(ws3,ws1,ws2,ws4)
 
-wb1.save(save_path+file_name_A)
-wb2.save(save_path+file_name_B)
+wb1.save(save_path+'A'+cur_time+'.xlsx')
+wb2.save(save_path+'B'+cur_time+'.xlsx')
 wb3.save(readD_path+file_name_D)
 wb4.save(read3_path+file_name_3)
