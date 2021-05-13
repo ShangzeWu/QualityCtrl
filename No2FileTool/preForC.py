@@ -98,7 +98,7 @@ while index_C_col<=Allcol1:
                         index_C_row = index_C_row-1
                     index_C_row+=1
         index_C_col=index_C_col+1
-wb1.save(dir_save_C+"resultC/"+file_name_C)
+wb1.save(dir_save_C+"resultC/Changed"+file_name_C)
 wb2.save(dir_namelist+file_name_list)
 '''#去除空行
 wb3 = load_workbook(dir_save_C+"resultC/"+file_name_C)
