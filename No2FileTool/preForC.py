@@ -87,17 +87,17 @@ while index_C_col<=Allcol1:
                     name_C = str(name_C)
                     index_N_col=1
                     index_N_row=2
-                    while index_N_row<=Allrow2:
+                    while index_N_row<=Allrow2:      #在名单表中查找
                         name_N = ws2.cell(index_N_row,index_N_col).value
                         if name_N == None:
                             index_N_row+=1
                             continue
                         else:
                             name_N = str(name_N)
-                            if name_N == name_C:
+                            if name_N == name_C:     #发现匹配项，确认属于我公司
                                 break
-                            else:
-                                index_N_row+=1
+                            else:                   #否则继续查找
+                                index_N_row+=1      
                         if index_N_row == Allrow2+1: #最后一次内层循环
                             flag = False   #没有找到C表要找的人
                     if flag==False:
