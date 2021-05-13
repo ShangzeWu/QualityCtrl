@@ -1,6 +1,13 @@
 # -*- coding: UTF-8 -*-
 from openpyxl import *
 import os
+import time
+from datetime import datetime, timedelta
+
+format_pattern = '%Y-%m-%d %H:%M:%S'
+cur_time = datetime.now()
+# 将 'cur_time' 类型时间通过格式化模式转换为 'str' 时间
+cur_time = cur_time.strftime(format_pattern)
 
 def find_new_file(dir):
     '''查找目录下最新的文件'''
@@ -209,4 +216,4 @@ ws3_all.cell(row=19,column=4,value=counterA)
 ws3_all.cell(row=19,column=6,value=counterB)
 
 wb1.save(dir_save_C+file_name_C)
-wb3.save(path+'/resultTemp/temp.xlsx')
+wb3.save(path+'/resultTemp/'+cur_time+'.xlsx')
