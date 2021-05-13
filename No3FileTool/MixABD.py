@@ -46,8 +46,8 @@ def  match_add(ws3,ws1,ws2,ws4):
             value_3_4 = str(value_3_4)
             if value_3_3 != None:
                 value_3_3 = str(value_3_3)
-                value_3_3 = value_3_3[0:2]
-                print(value_3_3)
+                value_3_3 = value_3_3[0:3]
+#                print(value_3_3)
             else:
                 value_3_3 = 'not'
             if found == False:     #在A表中查找
