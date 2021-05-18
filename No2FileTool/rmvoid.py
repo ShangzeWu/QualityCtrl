@@ -14,15 +14,15 @@ def find_new_file(dir):
 
 path =  "/var/www/html/QualityCtrl/No2FileTool"
 #print(path)
-dir_C = path+'/uploadC/' #用来读取C文件 的 路径
-dir_namelist = path+'/namelist/namelist.xlsx' #用来读取人员名单表 的 路径
+dir_C = path+'/tempC/' #用来读取C文件 的 路径
+#dir_namelist = path+'/namelist/namelist.xlsx' #用来读取人员名单表 的 路径
 #dir_template = path+'/template/template.xlsx' #用来读取输出模版表格 的 路径
 dir_save_C= "/var/www/html/QualityCtrl/No2FileTool/"  #输出 C文件 的保存路径
 
 file_name_C = find_new_file(dir_C)
 
 #去除空行
-wb3 = load_workbook(dir_save_C+"tempC/"+file_name_C)
+wb3 = load_workbook(path+"tempC/"+file_name_C)
 ws3 = wb3[wb3.sheetnames[0]]
 Allrow1_new = ws3.max_row
 #print(Allrow1_new)
