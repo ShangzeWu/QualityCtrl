@@ -1,15 +1,15 @@
 <?php
 
-$allowedExts = array("xls", "xlsx");
+#$allowedExts = array("xls", "xlsx");
 $temp = explode(".", $_FILES["file"]["name"]);  //以.作为分隔符
 echo $_FILES["file"]["size"]."kb"."<br>";
-echo "请注意，文件大小不能超过2000kb"."<br>";
-$extension = end($temp);     // 获取文件后缀名
-if ((($extension == "xls")
-|| ($extension == "xlsx"))
+#echo "请注意，文件大小不能超过2000kb"."<br>";
+#$extension = end($temp);     // 获取文件后缀名
+#if ((($extension == "xls")
+#|| ($extension == "xlsx"))
 #&& ($_FILES["file"]["size"] < 2048000)   // 小于 2000 kb
-&& in_array($extension, $allowedExts))
-{
+#&& in_array($extension, $allowedExts))
+#{
     if ($_FILES["file"]["error"] > 0)
     {
         echo "错误：: " . $_FILES["file"]["error"] . "<br>";
@@ -35,11 +35,11 @@ if ((($extension == "xls")
         }
     }
 
-}
-else
-{
-    echo "文件过大或非法的文件格式,仅能上传xlsx或xls，请尽量上传xlsx"."<br>";
-    echo "如需上传更大的文件，请联系管理员";
-}
+#}
+#else
+#{
+#    echo "文件过大或非法的文件格式,仅能上传xlsx或xls，请尽量上传xlsx"."<br>";
+#    echo "如需上传更大的文件，请联系管理员";
+#}
 
 ?>
