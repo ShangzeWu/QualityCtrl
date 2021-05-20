@@ -82,16 +82,16 @@ def find_insert(ws,name,value10,value12):  #在工作表中查找是否存在这
 		ws.cell(row=6,column=5,value=value12)
 #		print(font)
 		ws['A6'].font = Font(name=u'微软雅黑', size=10)
-#		ws['B6'].font = font
-#		ws['C6'].font = font
-#		ws['D6'].font = font
-#		ws['E6'].font = font
-#		ws['F6'].font = font
-#		ws['G6'].font = font
-#		ws['H6'].font = font
-#		ws['I6'].font = font
-#		ws['J6'].font = font
-#		ws['K6'].font = font
+		ws['B6'].font = Font(name=u'微软雅黑', size=10)
+		ws['C6'].font = Font(name=u'微软雅黑', size=10)
+		ws['D6'].font = Font(name=u'微软雅黑', size=10)
+		ws['E6'].font = Font(name=u'微软雅黑', size=10)
+		ws['F6'].font = Font(name=u'微软雅黑', size=10)
+		ws['G6'].font = Font(name=u'微软雅黑', size=10)
+		ws['H6'].font = Font(name=u'微软雅黑', size=10)
+		ws['I6'].font = Font(name=u'微软雅黑', size=10)
+		ws['J6'].font = Font(name=u'微软雅黑', size=10)
+		ws['K6'].font = Font(name=u'微软雅黑', size=10)
 		return
 
 def add(ws_a,ws):  #单表合计
