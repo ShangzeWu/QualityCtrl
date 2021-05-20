@@ -350,4 +350,4 @@ ws3_all.cell(row=19,column=9,value=counterC)
 ws3_all.cell(row=19,column=10,value=counterD)
 
 wb1.save(dir_MixABD+file_name_ABD)
-wb3.save(path+'/resultFinal/'+cur_time+'Final.xlsx')
+wb3.save(path+'/resultFinal/Final'+cur_time+'.xlsx')
