@@ -131,16 +131,17 @@ def inner_add(ws): #计算分表的合计和签收率
 		
 
 path =  "/var/www/html/QualityCtrl/No2FileTool"
-dir_template = path+'/template/temp.xlsx' #用来读取输出模版表格 的 路径
+dir_template = path+'/template/' #用来读取输出模版表格 的 路径
 dir_save_C= "/var/www/html/QualityCtrl/No2FileTool/resultC/"  #输出 C文件 的保存路径
 
 file_name_C = find_new_file(dir_save_C)
+file_name_temp = find_new_file(dir_template)
 
 
 #业务逻辑
 wb1 = load_workbook(dir_save_C+file_name_C) #处理后的C表
 ws1 = wb1[wb1.sheetnames[0]]           #C表第一页
-wb3 = load_workbook(dir_template)      #模板表
+wb3 = load_workbook(dir_template+file_name_temp)      #模板表
 ws3_all = wb3['汇总22.00']      #汇总表
 ws3_BL  = wb3['宝龙区']
 ws3_XD  = wb3['新都区']
