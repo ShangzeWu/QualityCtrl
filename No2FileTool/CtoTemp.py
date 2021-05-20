@@ -87,7 +87,7 @@ def add(ws_a,ws):  #单表合计
 	while index <= ws_row-2:
 		value_temp1 = ws.cell(index,3).value
 		value_temp2 = ws.cell(index,5).value
-		if value_temp1 == None:
+		if value_temp1 == None and value_temp2 == None:
 			index+=1
 			continue
 		else:
@@ -109,10 +109,21 @@ def add(ws_a,ws):  #单表合计
 			ws_a.cell(row=17,column=4,value=counter1)
 			ws_a.cell(row=17,column=6,value=counter2)
 
-def inner_add(ws):
+def inner_add(ws): #计算分表的合计和签收率
 	ws_row = ws.max_row
 	index = 6
 	while index<=ws_row-2:
+		value_receive = ws.cell(index,3).value
+		value_notsign = ws.cell(index,5).value
+		if value_receive == None and value_notsign == None:
+			index+=1
+			continue
+		else:
+			value_receive = int(value_receive)
+			value_notsign = int(value_notsign)
+			value_all = value_receive + value_notsign
+			
+			
 		
 
 path =  "/var/www/html/QualityCtrl/No2FileTool"
