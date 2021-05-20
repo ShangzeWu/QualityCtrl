@@ -3,6 +3,7 @@ from openpyxl import *
 import os
 import time
 from datetime import datetime, timedelta
+from openpyxl.styles import Font
 
 format_pattern = '%Y-%m-%d %H:%M:%S'
 cur_time = datetime.now()
