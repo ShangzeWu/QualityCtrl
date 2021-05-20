@@ -128,7 +128,7 @@ def inner_add(ws): #计算分表的合计和签收率
 	ws_row = ws.max_row
 #	ws_col = ws.max_column
 	index = 6
-	ws.auto_filter.ref = "A6:K"+str(ws_row-2)
+	ws.auto_filter.ref = "A5:K"+str(ws_row-2)
 	ws.auto_filter.add_sort_condition("D6:D"+str(ws_row-2))
 	while index<=ws_row-2:
 		value_receive = ws.cell(index,3).value
