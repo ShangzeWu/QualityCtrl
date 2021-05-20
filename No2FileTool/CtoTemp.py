@@ -92,6 +92,17 @@ def find_insert(ws,name,value10,value12):  #在工作表中查找是否存在这
 		ws['I6'].font = Font(name=u'微软雅黑', size=10)
 		ws['J6'].font = Font(name=u'微软雅黑', size=10)
 		ws['K6'].font = Font(name=u'微软雅黑', size=10)
+		ws['A6'].alignment = Alignment(horizontal='center', vertical='center')
+		ws['B6'].alignment = Alignment(horizontal='center', vertical='center')
+		ws['C6'].alignment = Alignment(horizontal='center', vertical='center')
+		ws['D6'].alignment = Alignment(horizontal='center', vertical='center')
+		ws['E6'].alignment = Alignment(horizontal='center', vertical='center')
+		ws['F6'].alignment = Alignment(horizontal='center', vertical='center')
+		ws['G6'].alignment = Alignment(horizontal='center', vertical='center')
+		ws['H6'].alignment = Alignment(horizontal='center', vertical='center')
+		ws['I6'].alignment = Alignment(horizontal='center', vertical='center')
+		ws['J6'].alignment = Alignment(horizontal='center', vertical='center')
+		ws['K6'].alignment = Alignment(horizontal='center', vertical='center')
 		return
 
 def add(ws_a,ws):  #单表合计
