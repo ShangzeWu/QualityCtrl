@@ -109,6 +109,11 @@ def add(ws_a,ws):  #单表合计
 			ws_a.cell(row=17,column=4,value=counter1)
 			ws_a.cell(row=17,column=6,value=counter2)
 
+def inner_add(ws):
+	ws_row = ws.max_row
+	index = 6
+	while index<=ws_row-2:
+		
 
 path =  "/var/www/html/QualityCtrl/No2FileTool"
 dir_template = path+'/template/temp.xlsx' #用来读取输出模版表格 的 路径
