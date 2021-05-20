@@ -223,6 +223,21 @@ add(ws3_all,ws3_WD)
 add(ws3_all,ws3_ZS)
 add(ws3_all,ws3_other)
 
+inner_add(ws3_BL)
+inner_add(ws3_XD)
+inner_add(ws3_CN)
+inner_add(ws3_KF)
+inner_add(ws3_WX)
+inner_add(ws3_TH)
+inner_add(ws3_WY)
+inner_add(ws3_LG)
+inner_add(ws3_CB)
+inner_add(ws3_YD)
+inner_add(ws3_YL)
+inner_add(ws3_WD)
+inner_add(ws3_ZS)
+inner_add(ws3_other)
+
 counterA=0
 counterB=0
 for i in range(5,19):
