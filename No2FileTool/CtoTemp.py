@@ -80,6 +80,7 @@ def find_insert(ws,name,value10,value12):  #在工作表中查找是否存在这
 		ws.cell(row=6,column=1,value=name)
 		ws.cell(row=6,column=3,value=value10)
 		ws.cell(row=6,column=5,value=value12)
+		ws['D6'].number_format = '0.00%'
 #		print(font)
 		ws['A6'].font = Font(name=u'微软雅黑', size=10)
 		ws['B6'].font = Font(name=u'微软雅黑', size=10)
