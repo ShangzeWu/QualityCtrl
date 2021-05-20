@@ -3,10 +3,10 @@
 $allowedExts = array("xlsx");
 $temp = explode(".", $_FILES["file"]["name"]);  //以.作为分隔符
 echo $_FILES["file"]["size"]."kb"."<br>";
-echo "请注意，文件大小不能超过2000kb"."<br>";
+#echo "请注意，文件大小不能超过2000kb"."<br>";
 $extension = end($temp);     // 获取文件后缀名
 if (($extension == "xlsx")
-&& ($_FILES["file"]["size"] < 2048000)   // 小于 2000 kb
+#&& ($_FILES["file"]["size"] < 2048000)   // 小于 2000 kb
 && in_array($extension, $allowedExts))
 {
     if ($_FILES["file"]["error"] > 0)
@@ -39,8 +39,8 @@ header("Location: http://47.114.178.105/QualityCtrl/No2FileTool/preForC.php");
 else
 {
     echo "上传失败，错误信息：";
-    echo "文件过大或非法的文件格式,仅能上传xlsx，不支持xls文件"."<br>";
-    echo "如需上传更大的文件，请联系管理员";
+    echo "非法的文件格式,仅能上传xlsx，不支持xls文件"."<br>";
+#    echo "如需上传更大的文件，请联系管理员";
 }
 
 ?>
