@@ -3,10 +3,10 @@
 $allowedExts = array("xlsx");
 $temp = explode(".", $_FILES["file"]["name"]);  //以.作为分隔符
 echo $_FILES["file"]["size"]."kb"."<br>";
-echo "请注意，文件大小不能超过2000kb"."<br>";
+#echo "请注意，文件大小不能超过2000kb"."<br>";
 $extension = end($temp);     // 获取文件后缀名
 if (($extension == "xlsx")
-&& ($_FILES["file"]["size"] < 2048000)   // 小于 2000 kb
+#&& ($_FILES["file"]["size"] < 2048000)   // 小于 2000 kb
 && in_array($extension, $allowedExts))
 {
     if ($_FILES["file"]["error"] > 0)
