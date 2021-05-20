@@ -75,7 +75,17 @@ def find_insert(ws,name,value10,value12):  #在工作表中查找是否存在这
 	if index>ws_rows:  #遍历工作页，没找到对应人员，插入一行并写入数据
 		ws.insert_rows(6,1)
 		font = ws["B"+str(index-3)].font
-		ws['6'].font = font
+		ws['A6'].font = font
+		ws['B6'].font = font
+		ws['C6'].font = font
+		ws['D6'].font = font
+		ws['E6'].font = font
+		ws['F6'].font = font
+		ws['G6'].font = font
+		ws['H6'].font = font
+		ws['I6'].font = font
+		ws['J6'].font = font
+		ws['K6'].font = font
 		ws.cell(row=6,column=1,value=name)
 		ws.cell(row=6,column=3,value=value10)
 		ws.cell(row=6,column=5,value=value12)
