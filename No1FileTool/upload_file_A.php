@@ -37,7 +37,7 @@ if (($extension == "xlsx")
 #exec("python3 preForA.py");
 #header("Location: http://47.114.178.105/QualityCtrl/No1FileTool/resultA");
 
-header("Location: http://47.114.178.105/QualityCtrl/No1FileTool/preForA.php");
+#header("Location: http://47.114.178.105/QualityCtrl/No1FileTool/preForA.php");
 }
 else
 {
