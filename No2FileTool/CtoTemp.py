@@ -122,7 +122,10 @@ def inner_add(ws): #计算分表的合计和签收率
 			value_receive = int(value_receive)
 			value_notsign = int(value_notsign)
 			value_all = value_receive + value_notsign
-			
+			ws.cell(row=index,column=2,value = value_all)
+			ws.cell(row=index,column=10,value = value_notsign)
+			ws.cell(row=index,column=4,value = value_receive/value_all)
+			index+=1
 			
 		
 
