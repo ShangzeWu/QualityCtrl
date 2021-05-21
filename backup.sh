@@ -10,6 +10,10 @@ find /var/www/html/QualityCtrl/No1FileTool/uploadB/*  -name "*.xlsx*" -exec mv {
 
 find /var/www/html/QualityCtrl/No2FileTool/uploadC/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/backupUploadC \;
 
+find /var/www/html/QualityCtrl/No2FileTool/resultTemp/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/resultTemp \;
+
+#find /var/www/html/QualityCtrl/No2FileTool/uploadC/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/backupUploadC \;
+
 find /var/www/html/QualityCtrl/No2FileTool/resultC/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/backupResultC \;
 
 find /var/www/html/QualityCtrl/No3FileTool/MixABD/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/MixABD \;
