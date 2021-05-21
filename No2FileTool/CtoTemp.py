@@ -8,8 +8,13 @@ from openpyxl.styles import PatternFill, Alignment
 
 format_pattern = '%Y-%m-%d %H:%M:%S'
 cur_time = datetime.now()
+cur_time1 = datetime.now()
 # 将 'cur_time' 类型时间通过格式化模式转换为 'str' 时间
 cur_time = cur_time.strftime(format_pattern)
+str_name1 = '何红'
+str_name2 = '李晓萍'
+teleNum1  = 18921880822
+teleNum2  = 17751570135
 
 def find_new_file(dir):
     '''查找目录下最新的文件'''
@@ -59,7 +64,6 @@ def classify(string):
 		return 14
 
 def find_insert(ws,name,value10,value12):  #在工作表中查找是否存在这个人员
-	ws.cell(row = 2,column = 5 , value = cur_time)
 	ws_rows = ws.max_row
 	index = 6
 	while index<= ws_rows:
@@ -108,6 +112,7 @@ def find_insert(ws,name,value10,value12):  #在工作表中查找是否存在这
 		return
 
 def add(ws_a,ws):  #单表合计
+	ws.cell(row = 2,column = 5 , value = cur_time)
 	ws_row = ws.max_row
 	counter1 = 0 #计数器
 	counter2 = 0
