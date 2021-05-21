@@ -59,6 +59,7 @@ def classify(string):
 		return 14
 
 def find_insert(ws,name,value10,value12):  #在工作表中查找是否存在这个人员
+	ws.cell(row = 2,column = 5 , value = cur_time)
 	ws_rows = ws.max_row
 	index = 6
 	while index<= ws_rows:
@@ -194,6 +195,7 @@ ws3_other  = wb3['其他']
 #wb.load_workbook(dir_save_C+file_name_C)
 #ws.wb[wb.sheetnames[0]]
 Allrow = ws1.max_row
+#ws3_all.cell(row = 2,column = 5 , value = cur_time)
 
 index = 2
 while index<=Allrow:
