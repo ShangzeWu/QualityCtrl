@@ -85,7 +85,8 @@ while index_C_col<=Allcol1:
                     continue
                 else:
                     name_C = str(name_C)
-                    index_N_col=1
+                    
+'''                    index_N_col=1
                     index_N_row=2
                     while index_N_row<=Allrow2:      #在名单表中查找
                         name_N = ws2.cell(index_N_row,index_N_col).value
@@ -103,6 +104,7 @@ while index_C_col<=Allcol1:
                     if flag==False:
                         ws1.delete_rows(index_C_row,1)
                         index_C_row = index_C_row-1
+                        '''
                     index_C_row+=1
         index_C_col=index_C_col+1
 wb1.save(dir_save_C+"tempC/ChangedC"+cur_time+'.xlsx')
