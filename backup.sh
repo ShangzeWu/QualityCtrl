@@ -12,7 +12,7 @@ find /var/www/html/QualityCtrl/No2FileTool/uploadC/*  -name "*.xlsx*" -exec mv {
 
 find /var/www/html/QualityCtrl/No2FileTool/resultTemp/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/resultTemp \;
 
-#find /var/www/html/QualityCtrl/No2FileTool/uploadC/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/backupUploadC \;
+find /var/www/html/QualityCtrl/No2FileTool/resultFinal/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/resultFinal \;
 
 find /var/www/html/QualityCtrl/No2FileTool/resultC/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/backupResultC \;
 
