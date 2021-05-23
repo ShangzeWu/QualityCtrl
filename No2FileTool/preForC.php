@@ -19,5 +19,5 @@ print_r($ret2);
 #echo $return_var;
 
 
-header("Location: http://47.114.178.105/QualityCtrl/No2FileTool/resultTemp");
+#header("Location: http://47.114.178.105/QualityCtrl/No2FileTool/resultTemp");
 ?>
