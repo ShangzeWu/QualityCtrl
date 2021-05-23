@@ -50,7 +50,7 @@ for n in range(2, Allrow2+1):
         list_name.append(value_name)
         
 
-print(list_name)
+#print(list_name)
 print(len(list_name))
 #去重
 index_rm_row = 2
