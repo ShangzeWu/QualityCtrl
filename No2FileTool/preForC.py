@@ -37,6 +37,20 @@ wb2 = load_workbook(dir_namelist+file_name_list)      #namelist表
 ws2 = wb2[wb2.sheetnames[0]]           #namelist表第一页
 #wb3 = load_workbook(dir_template)      #模板表
 
+#读取名单表，写入数组
+Allrow2 = ws2.max_row
+Allcol2 = ws2.max_column
+list_name = ['namelist']
+for n in range(2, Allrow2+1):
+    value_name = ws2.cell(n,1).value
+    if value_name == None:
+        continue
+    else:
+        value_name = str(value_name)
+        list_name.append(value_name)
+        
+
+print(list_name)
 #去重
 index_rm_row = 2
 All_rm_row = ws1.max_row
@@ -70,8 +84,7 @@ while index_rm_row<=All_rm_row:
 #合并三个表
 Allrow1 = ws1.max_row
 Allcol1 = ws1.max_column
-Allrow2 = ws2.max_row
-Allcol2 = ws2.max_column
+
 #print(Allrow1)
 index_C_col=1
 while index_C_col<=Allcol1:
@@ -85,27 +98,12 @@ while index_C_col<=Allcol1:
                     continue
                 else:
                     name_C = str(name_C)
-                    
-'''                    index_N_col=1
-                    index_N_row=2
-                    while index_N_row<=Allrow2:      #在名单表中查找
-                        name_N = ws2.cell(index_N_row,index_N_col).value
-                        if name_N == None:
-                            index_N_row+=1
-                            continue
-                        else:
-                            name_N = str(name_N)
-                            if name_N == name_C:     #发现匹配项，确认属于我公司
-                                break
-                            else:                   #否则继续查找
-                                index_N_row+=1      
-                        if index_N_row == Allrow2+1: #最后一次内层循环
-                            flag = False   #没有找到C表要找的人
-                    if flag==False:
-                        ws1.delete_rows(index_C_row,1)
-                        index_C_row = index_C_row-1
-                        '''
-                    index_C_row+=1
+                    if name_C in list_name:
+                        index_C_row += 1
+                        continue
+                    else:
+                        ws1.cell(row = index_C_row, column = index_C_col, value = None)
+                        index_C_row+=1
         index_C_col=index_C_col+1
 wb1.save(dir_save_C+"tempC/ChangedC"+cur_time+'.xlsx')
 wb2.save(dir_namelist+file_name_list)
