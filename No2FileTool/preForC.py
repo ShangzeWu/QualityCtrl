@@ -51,6 +51,7 @@ for n in range(2, Allrow2+1):
         
 
 print(list_name)
+print(len(list_name))
 #去重
 index_rm_row = 2
 All_rm_row = ws1.max_row
@@ -107,21 +108,4 @@ while index_C_col<=Allcol1:
         index_C_col=index_C_col+1
 wb1.save(dir_save_C+"tempC/ChangedC"+cur_time+'.xlsx')
 wb2.save(dir_namelist+file_name_list)
-'''#去除空行
-wb3 = load_workbook(dir_save_C+"resultC/"+file_name_C)
-ws3 = wb3[wb3.sheetnames[0]]
-Allrow1_new = ws3.max_row
-#print(Allrow1_new)
-print(ws3.cell(26,6).value)
-counter = 1
-index_rm_void = 2
-while index_rm_void<=Allrow1_new and counter <=Allrow1_new:
-    counter+=1
-    void_runner = ws3.cell(index_rm_void,6).value
-    if void_runner == None:
-#        ws3.delete_rows(index_rm_void,1)
-        print(index_rm_void)
-#        index_rm_void-=1
-    index_rm_void+=1
-wb3.save(dir_save_C+"resultC/"+file_name_C)
-'''
+
