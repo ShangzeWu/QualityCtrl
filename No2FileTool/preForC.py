@@ -103,7 +103,7 @@ while index_C_col<=Allcol1:
                         index_C_row += 1
                         continue
                     else:
-                        ws1.cell(row = index_C_row, column = index_C_col, value = None)
+                        ws1.cell(row = index_C_row, column = index_C_col, value ='')
                         index_C_row+=1
         index_C_col=index_C_col+1
 wb1.save(dir_save_C+"tempC/ChangedC"+cur_time+'.xlsx')
