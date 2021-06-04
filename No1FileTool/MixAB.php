@@ -12,5 +12,5 @@ print_r($ret);
 #echo $return_var;
 
 
-#header("Location: http://47.114.178.105/QualityCtrl/No1FileTool/MixAB");
+header("Location: http://47.114.178.105/QualityCtrl/No1FileTool/MixAB");
 ?>
