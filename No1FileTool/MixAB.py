@@ -68,7 +68,7 @@ while index_A_col<=Allcol1:
                                                         if ws1.cell(index_A_row,index_A_col+5).value==None:
                                                             ws1.delete_rows(index_A_row,1) #A表删除一行
                                                             index_A_row = index_A_row-1
-                                                            print(value_A)
+#                                                            print(value_A)
                                                         else:
                                                             ws2.delete_rows(index_B_row,1) #B表删除一行
                                                     index_B_row = index_B_row+1
