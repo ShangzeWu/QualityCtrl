@@ -21,3 +21,7 @@ find /var/www/html/QualityCtrl/No3FileTool/MixABD/*  -name "*.xlsx*" -exec mv {}
 find /var/www/html/QualityCtrl/No3FileTool/uploadD/*  -name "*.xlsx*" -exec mv {} /var/www/html/backupFiles/uploadD \;
 
 find /var/www/html/QualityCtrl/No1FileTool/MixAB/*  -name "*.xlsx*" -exec rm -f {} \;
+
+find /var/www/html/QualityCtrl/No1FileTool/MixAB_B/*  -name "*.xlsx*" -exec rm -f {} \;
+
+find /var/www/html/QualityCtrl/No1FileTool/MixAB_A/*  -name "*.xlsx*" -exec rm -f {} \;
