@@ -22,12 +22,12 @@ save_dir = path+'/MixAB/' #用来保存文件 的 路径
 file_name_A = find_new_file(dir_A)
 file_name_B = find_new_file(dir_B)
 
-shutil.rmtree('MixAB')
-os.mkdir('MixAB')
-shutil.rmtree('MixAB_A')
-os.mkdir('MixAB_A')
-shutil.rmtree('MixAB_B')
-os.mkdir('MixAB_B')
+#shutil.rmtree('MixAB')
+#os.mkdir('MixAB')
+#shutil.rmtree('MixAB_A')
+#os.mkdir('MixAB_A')
+#shutil.rmtree('MixAB_B')
+#os.mkdir('MixAB_B')
 
 #业务逻辑
 wb1 = load_workbook(dir_A+file_name_A)
